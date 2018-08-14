@@ -1,7 +1,9 @@
-<ion-searchbar (ionInput)="searchContacts($event)"></ion-searchbar>
-<ion-list>
-  <ion-item *ngFor="let contact of contacts">
-    <p>{{ contact.displayName }}</p>
-    <p>{{ contact.phoneNumbers[0].value }}</p>
-  </ion-item>
-</ion-list>
+<ion-content>
+  <ion-searchbar (ionInput)="searchContacts($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let contact of contacts">
+      <p>{{ contact.displayName }}</p>
+      <p *ngIf="contact.phoneNumbers">{{ contact.phoneNumbers[0].value }}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>>

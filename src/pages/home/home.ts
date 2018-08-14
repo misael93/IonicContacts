@@ -1,4 +1,4 @@
-import { IContactProperties, Contact } from '@ionic-native/contacts';
+import { Contact } from '@ionic-native/contacts';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ContactsProvider } from '../../providers/contacts/contacts';
@@ -30,7 +30,6 @@ export class HomePage {
   }
 
   searchContacts = (ev: any) => {
-    // 
     const val = ev.target.value;
     if (val && val.trim() != '') {
       this._contactsProvider.filter(val)

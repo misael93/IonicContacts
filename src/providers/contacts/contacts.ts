@@ -24,11 +24,8 @@ export class ContactsProvider {
     return new Promise((resolve, reject) => {
       var options = new ContactFindOptions();
       options.filter = search;
-      this.fields.push('displayName');
-      this.fields.push('name');
-      this.fields.push('phoneNumbers');
+      this.fields = ['displayName', 'name', 'phoneNumbers'];
       options.multiple = true;
-      options.hasPhoneNumber = true;
       this._contacts.find(this.fields, options)
         .then(contacts => {
           resolve(contacts);
